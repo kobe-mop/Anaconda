@@ -1,0 +1,27 @@
+https://www.jianshu.com/p/4ed9330108e0
+
+
+最近准备用python写个UI, 几番考察，决定用PyQt5加Eric6的方案。
+
+这个攻略非常有用，anaconda和Eric6的安装图解很详细：http://blog.csdn.net/weiaitaowang/article/details/52045360
+
+安装步骤：
+
+1. Anaconda：下载地址：https://www.anaconda.com/download/   如果电脑中没有别的python环境，安装的时候记得选择设置环境变量（打勾后下面提示会变红，但是别怕，要继续，别问我为什么知道）
+
+2. PyQt5: 这里折腾了很久，上面的攻略中用到的Pyqt5.6 exe是适配python3.5的，现在Anaconda已经python3.6了，如果安装这个exe，会导致Anaconda Nevigator 和spyder打不开，经过几番询问度娘和谷哥，发现从Pyqt5.7开始，不会再提供exe的版本，这条路彻底走不通了，可以用下面的方法:
+
+pip install pyqt5
+
+pip install pyqt5-tools ：这个装完后把安装路径（例如C:\ProgramData\Anaconda3\Lib\site-packages\pyqt5-tools）下的designer.exe 拷贝到 C:\ProgramData\Anaconda3\Lib\site-packages\PyQt5\Qt\bin，否则Eric6运行的时候会报错，说找不到designer
+
+pip install qscintilla
+
+3. 完成上面几步就可以开始安装Eric6了: https://sourceforge.net/projects/eric-ide/files/eric6/stable/  这里可以选择下载版本，目前最新的18.01里没有中文包，所以选择了下载次新的17.12
+
+
+下载这两个文件后，解压缩eric6-17.12.zip，然后解压eric6-i18n-zh_CN-17.12.zip到eric6-17.12.zip的解压目录，提示覆盖的时候同意覆盖。
+
+用Anaconda自带的Anaconda Prompt进入该目录（系统的cmd应该也可以，我没试过。。。），输入python install.py install
+
+安装完成后，在cmd中输入eric6 就可以启动了
